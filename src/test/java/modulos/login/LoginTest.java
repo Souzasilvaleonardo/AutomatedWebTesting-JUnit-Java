@@ -11,15 +11,18 @@ import support.TestBase;
 public class LoginTest extends TestBase {
 
     @Test
-    @DisplayName("usuário de login com e-mail e senha corretos")
-    public void testLogarComUsuarioESenhasCorretos() {
+    @DisplayName("logar com e-mail e senha corretos e depois deslogar")
+    public void testLogarComUsuarioESenhasCorretosEDepoisDeslogar() {
 
-        new HomePage(navegador)
+        String mensagemLogout = new HomePage(navegador)
                 .cadastrarUsuario()
                 .informarLogin("teste2024@gmail.com")
                 .informarSenha("12345678910")
                 .clicarEmLogar()
-                .deslogarConta();
+                .deslogarConta()
+                .mensagemLogout();
+
+        Assertions.assertEquals("Signup / Login",mensagemLogout,"A mensagem de logout não corresponde à expectativa.");
     }
 
     @Test

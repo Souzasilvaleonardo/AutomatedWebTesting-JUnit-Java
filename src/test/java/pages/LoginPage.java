@@ -22,6 +22,8 @@ public class LoginPage extends Utils {
     private WebElement cliqueBotaoLogar;
     @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[1]/div/form/p")
     private WebElement mensagemApresentada;
+    @FindBy(how =How.CSS, using = "a[href='/login']")
+    private WebElement logout;
 
 
     public LoginPage(WebDriver navegador) {
@@ -70,10 +72,15 @@ public class LoginPage extends Utils {
         cliqueBotaoLogar.click();
 
         return this;
+    }
+
+    public String mensagemLogout() {
+        return logout.getText();
 
     }
 
     public String capturarMensagemApresentada() {
+
         return mensagemApresentada.getText();
     }
 
