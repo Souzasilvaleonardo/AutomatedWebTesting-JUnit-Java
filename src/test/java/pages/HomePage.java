@@ -37,7 +37,6 @@ public class HomePage extends Utils {
     }
     public LoginPage deslogarConta() {
         deslogar.click();
-        Assertions.assertEquals(" Signup / Login"," Signup / Login");
 
         return new LoginPage(navegador);
     }
