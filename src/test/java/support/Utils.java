@@ -28,7 +28,7 @@ public class Utils {
 
     public static void scrollHorizontal(WebDriver navegador, int pixels) {
         JavascriptExecutor js = (JavascriptExecutor) navegador;
-        js.executeScript("window.scrollBy(0, arguments[0]);", pixels);
+        js.executeScript("window.scrollBy(arguments[0], 0);", pixels);
 
     }
 

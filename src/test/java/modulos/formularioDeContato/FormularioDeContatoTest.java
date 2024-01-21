@@ -1,8 +1,10 @@
 package modulos.formularioDeContato;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pages.ContatoPage;
 import pages.HomePage;
 import support.TestBase;
 
@@ -21,6 +23,9 @@ public class FormularioDeContatoTest extends TestBase {
                 .informarMensagem("Teste")
                 .clicarEnviar()
                 .validarMensagemEnviada()
-                .clicarHome();
+                .clicarHome()
+                .validarHome();
+
+         Assertions.assertEquals(" Home"," Home");
     }
 }

@@ -1,6 +1,5 @@
 package pages;
 
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +16,12 @@ public class HomePage extends Utils {
     private WebElement deslogar;
     @FindBy(how = How.CSS, using = "a[href='/contact_us']")
     private WebElement selectorContact;
+    @FindBy(how=How.CSS, using = "i[class='fa fa-home']")
+    private WebElement backHomeSucess;
+    @FindBy(how = How.CSS, using = "li>a[href='/test_cases']")
+    private WebElement clicarCaseTest;
+    @FindBy(how = How.CSS, using = "a[href='/products']")
+    private WebElement selectorButtonProdutos;
 
     public HomePage(WebDriver navegador) {
 
@@ -45,7 +50,24 @@ public class HomePage extends Utils {
         selectorContact.click();
 
         return new ContatoPage(navegador);
+    }
 
+    public String validarHome() {
+        return backHomeSucess.getText();
+
+    }
+
+    public CaseTestPage ClicarEmCaseTest() {
+        clicarCaseTest.click();
+
+        return new CaseTestPage(navegador);
+
+    }
+
+    public ProdutosPage ClicarEmProdutos() {
+        selectorButtonProdutos.click();
+
+        return new ProdutosPage(navegador);
     }
 
 }

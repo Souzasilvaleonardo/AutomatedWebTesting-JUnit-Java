@@ -69,8 +69,8 @@ public class ContatoPage extends Utils {
 
     public ContatoPage validarMensagemEnviada() {
 
-        String mensagem_enviada = mensagemEnviada.getText();
-        Assertions.assertEquals("Success! Your details have been submitted successfully.", mensagem_enviada);
+        String mensagemEnviadaComSucesso = mensagemEnviada.getText();
+        Assertions.assertEquals("Success! Your details have been submitted successfully.", mensagemEnviadaComSucesso);
 
         return this;
     }
