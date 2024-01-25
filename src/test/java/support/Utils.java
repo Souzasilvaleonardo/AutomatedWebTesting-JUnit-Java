@@ -16,7 +16,7 @@ public class Utils {
     public Utils(WebDriver navegador) {
         PageFactory.initElements(navegador, this);
         this.navegador = navegador;
-        this.wait = new WebDriverWait(navegador, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(navegador, Duration.ofSeconds(20));
 
     }
 

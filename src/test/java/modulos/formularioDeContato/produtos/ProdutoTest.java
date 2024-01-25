@@ -1,5 +1,6 @@
-package modulos.produtos;
+package modulos.formularioDeContato.produtos;
 
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

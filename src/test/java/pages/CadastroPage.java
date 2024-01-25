@@ -42,7 +42,7 @@ public class CadastroPage extends Utils {
     private WebElement selectorCelular;
     @FindBy(how = How.CSS, using = "button[data-qa='create-account']")
     private WebElement selectorBotaoCadastrar;
-    @FindBy(how = How.CSS, using = "div[class='pull-right']")
+    @FindBy(how = How.CSS, using = "a[class='btn btn-primary']")
     private WebElement selectorBotaoContinuar;
 
     public CadastroPage(WebDriver navegador) {

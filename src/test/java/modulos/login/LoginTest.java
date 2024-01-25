@@ -1,6 +1,7 @@
 package modulos.login;
 
 
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test
+    @Feature("Essential features1")
     @DisplayName("usuário de login com e-mail e senha incorretos")
     public void testLogarComUsuarioESenhasIncorretos() {
 
