@@ -1,6 +1,5 @@
 package modulos.cadastro;
 
-import io.qameta.allure.Feature;
 import org.junit.jupiter.api.*;
 import pages.HomePage;
 import support.TestBase;

@@ -1,5 +1,6 @@
 package support;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -32,7 +33,9 @@ public class Utils {
 
     }
 
-
-
+    public static String faker() {
+        Faker faker = new Faker();
+        return faker.internet().emailAddress();
+    }
 
 }

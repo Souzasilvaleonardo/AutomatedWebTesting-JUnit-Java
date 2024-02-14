@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import support.ScreenshotUtil;
 import support.Utils;
 
 public class HomePage extends Utils {
@@ -23,6 +24,12 @@ public class HomePage extends Utils {
     private WebElement clicarCaseTest;
     @FindBy(how = How.CSS, using = "a[href='/products']")
     private WebElement selectorButtonProdutos;
+    @FindBy(id = "susbscribe_email")
+    private WebElement selectorAssinatura;
+    @FindBy(id = "subscribe")
+    private WebElement selectorSubmeterAssinatura;
+    @FindBy(id = "success-subscribe")
+    private WebElement selectorAssinaturaEnviadoComSucesso;
 
     public HomePage(WebDriver navegador) {
 
@@ -69,6 +76,30 @@ public class HomePage extends Utils {
         selectorButtonProdutos.click();
 
         return new ProdutosPage(navegador);
+    }
+
+    public HomePage scrollDown(int pixel) {
+        scrollVertical(navegador, pixel);
+
+        return this;
+    }
+
+    public HomePage assinatura() {
+        String emailFaker = faker();
+        selectorAssinatura.sendKeys(emailFaker);
+
+        return this;
+    }
+
+    public HomePage submeterAssinatura() {
+        selectorSubmeterAssinatura.click();
+
+        return this;
+    }
+
+    public String assinaturaSubmetidaComSucesso() {
+
+        return selectorAssinaturaEnviadoComSucesso.getText();
     }
 
 }
